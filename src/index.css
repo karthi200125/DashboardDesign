@@ -6,11 +6,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 body {
     background-color: #16122b;
+    overflow-x: hidden;
 }
 
 a {
@@ -62,3 +62,8 @@ input:focus {
     border-top-right-radius: 25px;
     box-shadow: 5px -5px 0 5px #16122b;
 }
+
+/* .usercard:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+} */
