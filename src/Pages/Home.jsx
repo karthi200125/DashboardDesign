@@ -1,10 +1,11 @@
 import React from 'react'
 import { MdFormatAlignRight } from "react-icons/md";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import one from '../assets/one.png'
-import two from '../assets/two.png'
-import three from '../assets/three.png'
-import four from '../assets/four.png'
+import one from '../assets/1.png'
+import two from '../assets/2.png'
+import three from '../assets/3.png'
+import four from '../assets/4.png'
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -67,8 +68,8 @@ const Home = () => {
                     <div className="w-full h-full flex flex-wrap flex-row items-center justify-between">
                         {cards.map((card) => (
                             <div className="usercard group w-[23%] h-[100%] bg-[#363164] hover:bg-[#6e53de] cursor-pointer rounded-[20px] flex flex-col gap-1 items-center justify-center" key={card.img}>
-                                <img src={card.img} alt="" className='w-[110px] h-[100px] group-hover:h-[150px] group-hover:mt-[-30px] object-cover' />
-                                <h1 className='text-white capitalize font-bold mt-2 '>{card.name}</h1>
+                                <img src={card.img} alt="" className='w-[110px] h-[100px] group-hover:h-[150px] group-hover:mt-[-30px] object-contain' />
+                                <Link to={'/profile'} className='text-white capitalize font-bold mt-2 '>{card.name}</Link>
                                 <p className='text-[#5b5ab4] capitalize group-hover:text-white'>description</p>
                             </div>
                         ))}

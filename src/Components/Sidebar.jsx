@@ -14,7 +14,7 @@ const SideBar = ({ onSideOpen }) => {
 
   const routes = [
     { href: "/", name: "Home", icon: <GiElectric size={25} className='bg-transparent' /> },
-    { href: "/setting", name: "Setting", icon: <LuMessagesSquare size={25} className='bg-transparent' /> },
+    { href: "/users", name: "Users", icon: <LuMessagesSquare size={25} className='bg-transparent' /> },
     { href: "/data", name: "Data", icon: <SiDatabricks size={25} className='bg-transparent' /> },
     { href: "/update", name: "Update", icon: <FaRegCalendarAlt size={25} className='bg-transparent' /> },
     { href: "/profile", name: "Profile", icon: <FaRegUser size={25} className='bg-transparent' /> },

@@ -1,14 +1,14 @@
 import React, { Suspense, useState } from 'react';
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Login from './Components/Login';
 import NavBar from './Components/NavBar';
 import PageLoading from './Components/PageLoading';
 import SideBar from './Components/Sidebar';
-import Home from './Pages/Home';
-import Setting from './Pages/Setting';
-import Profile from './Pages/Profile';
 import Data from './Pages/Data';
+import Home from './Pages/Home';
+import Profile from './Pages/Profile';
 import Update from './Pages/Update';
+import UserDetails from './Pages/Users/UserDetails';
 
 const App = () => {
 
@@ -41,8 +41,8 @@ const App = () => {
           element: <Suspense fallback={<PageLoading />} ><Home /></Suspense>
         },
         {
-          path: '/setting',
-          element: <Suspense fallback={<PageLoading />} ><Setting /></Suspense>
+          path: '/users',
+          element: <Suspense fallback={<PageLoading />} ><UserDetails /></Suspense>
         },
         {
           path: '/profile',

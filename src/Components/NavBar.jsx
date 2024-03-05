@@ -2,6 +2,7 @@ import React from 'react'
 import Search from './Search'
 import { GoBellFill } from "react-icons/go";
 import User from './User';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
@@ -13,7 +14,9 @@ const NavBar = () => {
             <div className='flex flex-row gap-5'>
                 <div className="w-[40px] h-[40px] relative flex items-center justify-center rounded-full bg-[#6e53de] cursor-pointer transition">
                     {/* <span className='absolute top-0 bg-red-600 rounded-full w-[10px] h-[10px] '>1</span> */}
-                    <GoBellFill size={20} className='text-white'/>
+                    <Link to={'/data'}>
+                        <GoBellFill size={20} className='text-white' />
+                    </Link>
                 </div>
                 <User />
             </div>
