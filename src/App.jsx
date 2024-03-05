@@ -6,7 +6,7 @@ import PageLoading from './Components/PageLoading';
 import SideBar from './Components/Sidebar';
 import Data from './Pages/Data';
 import Home from './Pages/Home';
-import Profile from './Pages/Profile';
+import Profile from './Pages/Profile/Profile';
 import Update from './Pages/Update';
 import UserDetails from './Pages/Users/UserDetails';
 
