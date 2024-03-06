@@ -44,5 +44,34 @@
         text-transform: capitalize;
         font-weight: 700;
     }
-    
+
+    p {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .f {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        button {
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 10px;
+            color: black;
+            font-weight: 700;
+        }
+
+        p {
+            color: white;
+            font-weight: 700;
+
+            span {
+                color: rgba(255, 255, 255, 0.5);
+                margin-left: 10px;
+            }
+        }
+    }
+
 }

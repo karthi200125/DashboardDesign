@@ -5,17 +5,10 @@ import { Link } from 'react-router-dom';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { useState } from 'react';
 import SingleUser from '../../Components/SingleUser/SingleUser';
+import { USERS } from '../../dummy'
 
 const UserDetails = () => {
-
-    const users = [
-        { id: '1', img: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600", username: "karthkeyan", UserId: "1234567890", email: "skarthkeyN@mail.com" },
-        { id: '2', img: "", username: "karthkeyan", UserId: "1234567890", email: "skarthkeyN@mail.com" },
-        { id: '3', img: "", username: "karthkeyan", UserId: "1234567890", email: "skarthkeyN@mail.com" },
-        { id: '4', img: "", username: "karthkeyan", UserId: "1234567890", email: "skarthkeyN@mail.com" },
-        { id: '5', img: "", username: "karthkeyan", UserId: "1234567890", email: "skarthkeyN@mail.com" },
-    ]
-
+    
     const [userOpen, setUserOpen] = useState(false)
     const [userD, setuserD] = useState({})
 
@@ -28,7 +21,7 @@ const UserDetails = () => {
         <div className='users'>
             <div className="usertop">
                 <span>All users</span>
-                <p>20 users</p>
+                <p>{USERS.length} users</p>
             </div>
             <div className="usercon">
                 <div className={`singleuser ${userOpen && "useropen"}`}>
@@ -44,7 +37,7 @@ const UserDetails = () => {
                     <h1>Update</h1>
                 </div>
                 <div className="usersd">
-                    {users.map((user) => (
+                    {USERS.map((user) => (
                         <div className="table" key={user.key} onClick={() => HandleUserOpen(user)}>
                             <div className='usertable' >{user.id}</div>
                             <div className='usertable'>

@@ -11,9 +11,14 @@ const SingleUser = ({ user, onclose }) => {
     return (
         <div className='singleusercon'>
             <div className="close" onClick={handleClose}><IoMdClose /></div>
-            <img src={user.img} alt="" className='useropenimage'/>
+            <img src={user.img} alt="" className='useropenimage' />
             <h1>{user.username}</h1>
-            <span>{user.email}</span>
+            <p>{user.email}</p>
+            <p>{user.country}</p>
+            <div className='f'>
+                <button>Follow</button>
+                <p>Followes:<span>10</span></p>
+            </div>
         </div>
     )
 }

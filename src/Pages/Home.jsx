@@ -7,16 +7,13 @@ import three from '../assets/3.png'
 import four from '../assets/4.png'
 import { Link } from 'react-router-dom';
 import MainChart from '../Components/MainChart';
+import { POSTS, USERS } from '../dummy';
 
 
 const Home = () => {
 
-    const cards = [
-        { img: one, name: 'karthi' },
-        { img: two, name: 'karthi' },
-        { img: three, name: 'karthi' },
-        { img: four, name: 'karthi' },
-    ]
+    const fromStudentsCount = USERS.filter((user) => user.from === "student")
+    const fromTeacherCount = USERS.filter((user) => user.from === "teacher")
 
     return (
         <div className='w-full h-full flex flex-col gap-5 mt-5 overflow-y-scroll home'>
@@ -24,13 +21,13 @@ const Home = () => {
             {/* top details cards totla users */}
             <div className='h-[70%] flex flex-row items-center gap-5'>
                 <div className='w-[40%] h-full flex flex-col gap-2'>
-                    <span className='text-white w-full font-bold'>Earings</span>
+                    <span className='text-white w-full font-bold'>Users</span>
                     <div className='h-full bg-[#363164] rounded-[25px] flex flex-row gap-2 p-5'>
                         <div className='flex w-[40%] h-full items-center justify-center'>
                             <div className="roundcon w-[100px] h-[100px] bg-[#6c11dd] rounded-full p-[3px]">
                                 <div className="round w-full h-full bg-[#363164] rounded-full p-[4px]">
                                     <div className="round w-full h-full bg-[#564ea0] rounded-full flex items-center justify-center flex-col text-[#02a9a0] text-[12px]">
-                                        <h1 className='text-white font-bold text-lg'>100</h1>
+                                        <h1 className='text-white font-bold text-lg'>{USERS.length}</h1>
                                         users
                                     </div>
                                 </div>
@@ -42,14 +39,14 @@ const Home = () => {
                                     <span className='w-[10px] h-[10px] rounded-full bg-[#6c11dd]'></span>
                                     From students
                                 </div>
-                                <p className='pl-4 text-white'>500</p>
+                                <p className='pl-4 text-white'>{fromStudentsCount.length}</p>
                             </div>
                             <div className="flex flex-col w-full ">
                                 <div className='flex flex-row gap-2 items-center text-[#5b5ab4] font-bold'>
                                     <span className='w-[10px] h-[10px] rounded-full bg-[#02a9a0]'></span>
-                                    From students
+                                    From Teacher
                                 </div>
-                                <p className='pl-4 text-white'>500</p>
+                                <p className='pl-4 text-white'>{fromTeacherCount.length}</p>
                             </div>
                         </div>
                     </div>
@@ -57,7 +54,7 @@ const Home = () => {
 
                 <div className='w-full h-full flex flex-col gap-2'>
                     <div className='w-full flex flex-row items-center justify-between'>
-                        <span className='text-white font-bold'>Nearly jobs</span>
+                        <span className='text-white font-bold'>New Users</span>
                         <div className='flex flex-row items-center gap-5 text-[#6e53de]'>
                             <FaArrowLeftLong size={25} className='text-white cursor-pointer' />
                             <FaArrowRightLong size={25} className='cursor-pointer' />
@@ -67,11 +64,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="w-full h-full flex flex-wrap flex-row items-center justify-between">
-                        {cards.map((card) => (
+                        {USERS.slice(0, 4).map((card) => (
                             <div className="usercard group w-[23%] h-[100%] bg-[#363164] hover:bg-[#6e53de] cursor-pointer rounded-[20px] flex flex-col gap-1 items-center justify-center" key={card.img}>
-                                <img src={card.img} alt="" className='w-[110px] h-[100px] group-hover:h-[150px] group-hover:mt-[-30px] object-contain' />
-                                <Link to={'/profile'} className='text-white capitalize font-bold mt-2 '>{card.name}</Link>
-                                <p className='text-[#5b5ab4] capitalize group-hover:text-white'>description</p>
+                                <img src={card.char} alt="" className='w-[110px] h-[100px] group-hover:h-[150px] group-hover:mt-[-30px] object-contain' />
+                                <Link to={'/profile'} className='text-white capitalize font-bold mt-2 '>{card.username}</Link>
+                                <p className='text-[#5b5ab4] capitalize group-hover:text-white'>{card.role}</p>
                             </div>
                         ))}
                     </div>
@@ -108,12 +105,12 @@ const Home = () => {
                     </div>
                     <div className="flex flex-row items-center gap-2 w-full h-[80px] font-bold text-white">
                         <div className="flex items-center justify-center rounded-lg w-full h-full bg-[#1e4fff] flex-col">
-                            <p>400</p>
-                            <p className='text-[10px]'>totla users</p>
+                            <p>{USERS.length}</p>
+                            <p className='text-[10px]'>Total users</p>
                         </div>
                         <div className="flex items-center justify-center rounded-lg w-full h-full bg-[#079696] flex-col">
-                            <p>400</p>
-                            <p className='text-[10px]'>totla users</p>
+                            <p>{POSTS.length}</p>
+                            <p className='text-[10px]'>Totla Posts</p>
                         </div>
                     </div>
 

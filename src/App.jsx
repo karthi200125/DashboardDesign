@@ -4,8 +4,9 @@ import Login from './Components/Login';
 import NavBar from './Components/NavBar';
 import PageLoading from './Components/PageLoading';
 import SideBar from './Components/Sidebar';
-import Data from './Pages/Data';
+import Activity from './Pages/Activity/Activity';
 import Home from './Pages/Home';
+import Posts from './Pages/Posts/Posts';
 import Profile from './Pages/Profile/Profile';
 import Update from './Pages/Update';
 import UserDetails from './Pages/Users/UserDetails';
@@ -49,8 +50,12 @@ const App = () => {
           element: <Suspense fallback={<PageLoading />} ><Profile /></Suspense>
         },
         {
-          path: '/data',
-          element: <Suspense fallback={<PageLoading />} ><Data /></Suspense>
+          path: '/posts',
+          element: <Suspense fallback={<PageLoading />} ><Posts /></Suspense>
+        },
+        {
+          path: '/activity',
+          element: <Suspense fallback={<PageLoading />} ><Activity /></Suspense>
         },
         {
           path: '/update',

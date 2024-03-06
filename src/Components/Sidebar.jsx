@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import React, { useState } from 'react';
+import { FaRegCalendarAlt, FaUsers } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa6";
 import { GiElectric } from "react-icons/gi";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { LuMessagesSquare } from "react-icons/lu";
-import { FaHandLizard, FaRegCalendarAlt } from "react-icons/fa";
+import { SiDatabricks } from "react-icons/si";
 import { TbLogout } from "react-icons/tb";
 import { Link, useLocation } from 'react-router-dom';
-import { FaRegUser } from "react-icons/fa6";
-import { SiDatabricks } from "react-icons/si";
 
 
 
@@ -14,9 +14,9 @@ const SideBar = ({ onSideOpen }) => {
 
   const routes = [
     { href: "/", name: "Home", icon: <GiElectric size={25} className='bg-transparent' /> },
-    { href: "/users", name: "Users", icon: <LuMessagesSquare size={25} className='bg-transparent' /> },
-    { href: "/data", name: "Data", icon: <SiDatabricks size={25} className='bg-transparent' /> },
-    { href: "/update", name: "Update", icon: <FaRegCalendarAlt size={25} className='bg-transparent' /> },
+    { href: "/users", name: "Users", icon: <FaUsers size={25} className='bg-transparent' /> },
+    { href: "/posts", name: "Posts", icon: <SiDatabricks size={25} className='bg-transparent' /> },
+    { href: "/activity", name: "Activity", icon: <LuMessagesSquare size={25} className='bg-transparent' /> },
     { href: "/profile", name: "Profile", icon: <FaRegUser size={25} className='bg-transparent' /> },
     { href: "/logout", name: "Logout", icon: <TbLogout size={25} className='bg-transparent' /> },
   ]
@@ -24,8 +24,6 @@ const SideBar = ({ onSideOpen }) => {
   const [sideOpen, setSideOpen] = useState(false)
   const location = useLocation()
   const pathname = location.pathname
-
-  console.log(pathname)
 
   const handlesideopen = () => {
     setSideOpen(!sideOpen)

@@ -1,4 +1,4 @@
-.profile {    
+.profile {
     overflow-x: hidden;
     height: 100%;
     display: flex;
@@ -77,12 +77,19 @@
             gap: 10px;
             padding: 20px;
             border-radius: 10px;
+            position: sticky;
+            top: 0;
+            left: 0;
 
             h1 {
                 font-size: 15px;
                 font-weight: 700;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.4);
                 padding: 10px;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.3);
             }
         }
 
@@ -92,6 +99,35 @@
             background-color: #363164;
             padding: 20px;
             border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .postcard {
+                display: flex;
+                flex-direction: column;
+                border-radius: 20px;
+                overflow: hidden;
+
+                .btm {
+                    padding: 20px 20px;
+                    background-color: white;
+                    color: black;
+                    font-weight: 700;
+                    height: max-content;
+
+                    .postleft {
+                        display: flex;
+                        flex-direction: column;
+
+                        p {
+                            background-color: red;
+                            color: rgba(255, 255, 255, 0.3);
+                        }
+                    }
+
+                }
+            }
         }
 
         .right {
