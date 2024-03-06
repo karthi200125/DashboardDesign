@@ -26,6 +26,11 @@ input:focus {
     outline: none;
 }
 
+.home::-webkit-scrollbar {
+    display: none;
+}
+
+
 /* sidebar route */
 .route {
     padding: 15px 20px;

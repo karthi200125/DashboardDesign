@@ -6,6 +6,7 @@ import two from '../assets/2.png'
 import three from '../assets/3.png'
 import four from '../assets/4.png'
 import { Link } from 'react-router-dom';
+import MainChart from '../Components/MainChart';
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
     ]
 
     return (
-        <div className='w-full h-full flex flex-col gap-5 mt-5'>
+        <div className='w-full h-full flex flex-col gap-5 mt-5 overflow-y-scroll home'>
 
             {/* top details cards totla users */}
             <div className='h-[70%] flex flex-row items-center gap-5'>
@@ -95,7 +96,9 @@ const Home = () => {
                             <button className='ml-5 px-3 py-1 rounded-full text-[#6c11dd] bg-[#16122b] font-bold text-[12px] cursor-pointer border-[1px] border-solid border-[#6c11dd]'>Week</button>
                         </div>
                     </div>
-                    <div className="flex">btm</div>
+                    <div className="flex">
+                        <MainChart />
+                    </div>
                 </div>
 
                 <div className="w-[30%] h-full bg-[#363164] rounded-[25px] p-5 flex flex-col gap-3">
