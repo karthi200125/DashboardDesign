@@ -7,7 +7,7 @@ const SingleUser = ({ user, onclose }) => {
     const handleClose = () => {
         onclose(true)
     }
-
+    
     return (
         <div className='singleusercon'>
             <div className="close" onClick={handleClose}><IoMdClose /></div>
@@ -17,7 +17,7 @@ const SingleUser = ({ user, onclose }) => {
             <p>{user.country}</p>
             <div className='f'>
                 <button>Follow</button>
-                <p>Followes:<span>10</span></p>
+                <p>Followes:<span>{user.Followers.length}</span></p>
             </div>
         </div>
     )

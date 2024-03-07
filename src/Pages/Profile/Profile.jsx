@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { POSTS, USERS } from '../../dummy'
 import './Profile.scss'
+import { IoMdHeart } from 'react-icons/io'
 
 const Profile = () => {
 
@@ -30,31 +31,55 @@ const Profile = () => {
                     <p>one</p>
                 </div>
                 <div className="mid">
-                    {POSTS.map((post) => (
+                    {profileUser.createdPosts.map((cp) => {
+                        const getcreatedPosts = POSTS.find((post) => post.id === cp)
+                        return (
+                            <div className="postcard" key={getcreatedPosts.id}>
+                                <img src={getcreatedPosts.potsImage} alt="" className='p-5 bg-black '/>
+                                <div className="btm">
+                                    <div className='postleftt'>
+                                        <img src={USERS.find((user) => user.id === getcreatedPosts.userId).img} alt="" />
+                                        <h1>{USERS.find((user) => user.id === getcreatedPosts.userId).username}</h1>
+                                    </div>
+                                    <div className="profilepostlike">
+                                        <IoMdHeart className='profilepostheart' />
+                                        <p>{getcreatedPosts.likes.length}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+
+                    {/* {POSTS.map((post) => (
                         <div className="postcard" key={post.id}>
                             <img src={post.potsImage} alt="" />
                             <div className="btm">
                                 <div className='postleft flex gap-2 flex-col'>
-                                    <img src={post.postuserImage} alt="" className='w-[30px] h-[30px] rounded-full'/>
+                                    <img src={post.postuserImage} alt="" className='w-[30px] h-[30px] rounded-full' />
                                     <h1>{post.postUsername}</h1>
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
                 <div className="left right">
                     <h1>Followers</h1>
                     <div className="followers">
-                        {USERS.map((user) => (
-                            <div className="user" onClick={() => setProfileUser(user)}>
-                                <img src={user.img} alt="" />
-                                <div className='de'>
-                                    <span>{user.username}</span>
-                                    <p>{user.role}</p>
+                        {profileUser.Followers.map(fid => {
+                            const getUser = USERS.find(user => user.id === fid);
+
+                            return (
+                                <div className="user" onClick={() => setProfileUser(getUser)}>
+                                    <img src={getUser.img} alt="" />
+                                    <div className="de">
+                                        <span>{getUser.username}</span>
+                                        <p>{getUser.role}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
+
                 </div>
             </div>
         </div>

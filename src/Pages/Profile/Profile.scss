@@ -110,19 +110,38 @@
                 overflow: hidden;
 
                 .btm {
-                    padding: 20px 20px;
+                    padding: 5px 20px;
                     background-color: white;
                     color: black;
                     font-weight: 700;
                     height: max-content;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
 
-                    .postleft {
+                    .postleftt {
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: row;
+                        gap: 10px;
 
-                        p {
-                            background-color: red;
-                            color: rgba(255, 255, 255, 0.3);
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }                        
+                    }
+
+                    .profilepostlike {
+                        display: flex;
+                        flex-direction: row !important;
+                        gap: 10px;
+                        align-items: center;
+
+                        .profilepostheart {
+                            font-size: 20px;
+                            color: red;
                         }
                     }
 
