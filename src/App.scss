@@ -1,0 +1,67 @@
+.app {
+    max-width: 1440px;
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px 0;
+
+    .rightbar {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px; // Added "px" after "5" to specify the unit
+    }
+}
+
+.sbcon {
+    height: 100%;
+    display: flex;
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 480px) {
+    .sbcon {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .sbcon {
+        display: none;
+    }
+}
+
+
+.sbopen {
+    width: 8%;
+    transition: 0.3s ease-in-out;
+}
+
+.sbnormal {
+    width: 20%;
+    transition: 0.3s ease-in-out;
+}
+
+// Media query mixins
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        @content;
+    }
+}

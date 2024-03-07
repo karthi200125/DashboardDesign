@@ -21,7 +21,7 @@ const UserDetails = () => {
         <div className='users'>
             <div className="usertop">
                 <span>All users</span>
-                <p>{USERS.length} users</p>
+                <p>{USERS?.length} users</p>
             </div>
             <div className="usercon">
                 <div className={`singleuser ${userOpen && "useropen"}`}>
@@ -31,14 +31,14 @@ const UserDetails = () => {
                 <div className="headings">
                     <h1>No</h1>
                     <h1>UserName</h1>
-                    <h1>email</h1>
-                    <h1>UserId</h1>
+                    <h1 className='udemail'>email</h1>
+                    <h1 className='uduserid'>UserId</h1>
                     <h1>Delete</h1>
                     <h1>Update</h1>
                 </div>
                 <div className="usersd">
                     {USERS.map((user) => (
-                        <div className="table" key={user.key} onClick={() => HandleUserOpen(user)}>
+                        <div className="table" key={user.id} onClick={() => HandleUserOpen(user)}>
                             <div className='usertable' >{user.id}</div>
                             <div className='usertable'>
                                 <img src={user.img} alt="" />

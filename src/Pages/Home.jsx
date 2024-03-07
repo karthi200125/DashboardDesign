@@ -1,10 +1,6 @@
-import React from 'react'
-import { MdFormatAlignRight } from "react-icons/md";
+import React from 'react';
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import one from '../assets/1.png'
-import two from '../assets/2.png'
-import three from '../assets/3.png'
-import four from '../assets/4.png'
+import { MdFormatAlignRight } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import MainChart from '../Components/MainChart';
 import { POSTS, USERS } from '../dummy';
@@ -16,11 +12,11 @@ const Home = () => {
     const fromTeacherCount = USERS.filter((user) => user.from === "teacher")
 
     return (
-        <div className='w-full h-full flex flex-col gap-5 mt-5 overflow-y-scroll home'>
+        <div className='w-full h-full flex flex-col gap-5 mt-5 overflow-y-scroll home p-3 '>
 
             {/* top details cards totla users */}
-            <div className='h-[70%] flex flex-row items-center gap-5'>
-                <div className='w-[40%] h-full flex flex-col gap-2'>
+            <div className='h-[70%] flex md:flex-row flex-col items-center gap-5'>
+                <div className='md:w-[40%] w-full h-full flex flex-col gap-2'>
                     <span className='text-white w-full font-bold'>Users</span>
                     <div className='h-full bg-[#363164] rounded-[25px] flex flex-row gap-2 p-5'>
                         <div className='flex w-[40%] h-full items-center justify-center'>
@@ -65,7 +61,7 @@ const Home = () => {
                     </div>
                     <div className="w-full h-full flex flex-wrap flex-row items-center justify-between">
                         {USERS.slice(0, 4).map((card) => (
-                            <div className="usercard group w-[23%] h-[100%] bg-[#363164] hover:bg-[#6e53de] cursor-pointer rounded-[20px] flex flex-col gap-1 items-center justify-center" key={card.img}>
+                            <div className="usercard group md:w-[23%] w-[49%] md:h-[100%] h-[70%] mt-2 bg-[#363164] hover:bg-[#6e53de] cursor-pointer rounded-[20px] flex flex-col gap-1 items-center justify-center" key={card.img}>
                                 <img src={card.char} alt="" className='w-[110px] h-[100px] group-hover:h-[150px] group-hover:mt-[-30px] object-contain' />
                                 <Link to={'/profile'} className='text-white capitalize font-bold mt-2 '>{card.username}</Link>
                                 <p className='text-[#5b5ab4] capitalize group-hover:text-white'>{card.role}</p>
@@ -76,29 +72,29 @@ const Home = () => {
             </div>
 
             {/* bottom details bar chart */}
-            <div className='h-full w-full flex flex-row gap-5'>
+            <div className='h-full w-full flex md:flex-row flex-col md:mt-0  mt-[120%] gap-5'>
 
-                <div className="w-[70%] h-full flex flex-col gap-2">
+                <div className="md:w-[70%] w-full h-full flex flex-col gap-2">
                     <div className="flex flex-row items-center justify-between">
                         <span className='text-white font-bold'>Analysis</span>
                         <div className="flex flex-row items-center gap-2">
-                            <div className='flex flex-row gap-2 items-center text-[#5b5ab4] font-bold'>
+                            <div className='hidden md:flex flex-row gap-2 items-center text-[#5b5ab4] font-bold'>
                                 <span className='w-[10px] h-[10px] rounded-full bg-[#6c11dd]'></span>
                                 From students
                             </div>
-                            <div className='flex flex-row gap-2 items-center text-[#5b5ab4] font-bold'>
+                            <div className='hidden md:flex flex-row gap-2 items-center text-[#5b5ab4] font-bold'>
                                 <span className='w-[10px] h-[10px] rounded-full bg-[#6c11dd]'></span>
                                 From students
                             </div>
                             <button className='ml-5 px-3 py-1 rounded-full text-[#6c11dd] bg-[#16122b] font-bold text-[12px] cursor-pointer border-[1px] border-solid border-[#6c11dd]'>Week</button>
                         </div>
                     </div>
-                    <div className="flex">
+                    <div className="flex ">
                         <MainChart />
                     </div>
                 </div>
 
-                <div className="w-[30%] h-full bg-[#363164] rounded-[25px] p-5 flex flex-col gap-3">
+                <div className="md:w-[30%] w-full h-full bg-[#363164] rounded-[25px] p-5 flex flex-col gap-3">
                     <div className="flex flex-row items-center justify-between">
                         <span className='font-bold text-white'>Recent Activity</span>
                         <button className='px-3 py-1 rounded-full text-[#6c11dd] bg-[#16122b] font-bold text-[12px] cursor-pointer border-[1px] border-solid border-[#6c11dd]'>Week</button>

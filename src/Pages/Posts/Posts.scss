@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .posts {
     display: flex;
     flex-direction: column;
@@ -6,6 +8,10 @@
 
     &::-webkit-scrollbar {
         display: none;
+    }
+
+    @include mobile {
+        padding: 10px;
     }
 
     .posttop {
@@ -40,7 +46,27 @@
             padding-left: 20px;
             position: sticky;
             top: 0;
-            z-index: 1;            
+            z-index: 1;
+
+            @include mobile {
+                padding: 5px;
+                gap: 5px;
+            }
+
+            @include tablet {
+                padding: 10px;
+            }
+
+            h1,
+            p {
+                @include mobile {
+                    display: none;
+                }
+
+                @include tablet {
+                    font-size: 12px;
+                }
+            }
 
             select {
                 padding: 10px 20px;
@@ -58,7 +84,16 @@
             display: flex;
             flex-direction: row;
             flex-flow: wrap row;
-            gap: 1%;            
+            gap: 1%;
+
+            @include mobile {
+                gap: 0%;
+            }
+
+            @include tablet {
+                gap: 2%;
+            }
+
 
             .post {
                 width: 24%;
@@ -69,6 +104,18 @@
                 flex-direction: column;
                 position: relative;
                 gap: 5px;
+
+                @include mobile {
+                    width: 100%;
+                }
+
+                @include tablet {
+                    width: 32%;
+                }
+
+                @include laptop {
+                    width: 32%;
+                }
 
 
                 img {
@@ -116,7 +163,7 @@
                         display: flex;
                         flex-direction: row;
                         gap: 10px;
-                        background-color: rgba(0, 0, 0, 0.2);                        
+                        background-color: rgba(0, 0, 0, 0.2);
                         padding: 5px;
                         border-radius: 5px;
 

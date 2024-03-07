@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .profile {
     overflow-x: hidden;
     height: 100%;
@@ -8,6 +10,10 @@
 
     &::-webkit-scrollbar {
         display: none;
+    }
+
+    @include mobile {
+        padding: 10px;
     }
 
     .profiletop {
@@ -23,6 +29,11 @@
             height: 100px;
             position: relative;
 
+            @include mobile {
+                border-bottom: 1px solid white;
+                height: max-content;
+            }
+
             img {
                 width: 150px;
                 height: 150px;
@@ -30,6 +41,17 @@
                 position: absolute;
                 top: -50%;
                 left: 5%;
+
+                @include mobile {
+                    width: 100px;
+                    height: 100px;
+                    top: 20%;
+                }
+
+                @include laptop {
+                    width: 120px;
+                    height: 120px;
+                }
             }
 
             .profilename {
@@ -40,6 +62,17 @@
                 display: flex;
                 flex-direction: row;
                 gap: 100px;
+
+                @include mobile {
+                    border: none;
+                    padding-left: 20%;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                @include laptop {
+                    padding-left: 10%;
+                }
 
                 h1 {
                     font-size: 25px;
@@ -58,6 +91,10 @@
                     padding: 0 20px;
                     background-color: blue;
                     color: white;
+
+                    @include mobile {
+                        width: max-content;
+                    }
                 }
             }
         }
@@ -67,6 +104,10 @@
         display: flex;
         flex-direction: row;
         gap: 10px;
+
+        @include mobile {
+            flex-direction: column;
+        }
 
         .left {
             width: 25%;
@@ -80,6 +121,15 @@
             position: sticky;
             top: 0;
             left: 0;
+
+            @include mobile {
+                width: 100%;
+                position: static;
+            }
+
+            @include laptop {
+                width: 30%;
+            }
 
             h1 {
                 font-size: 15px;
@@ -103,6 +153,10 @@
             flex-direction: column;
             gap: 10px;
 
+            @include mobile {
+                width: 100%;
+            }
+            
             .postcard {
                 display: flex;
                 flex-direction: column;
@@ -130,7 +184,7 @@
                             height: 30px;
                             border-radius: 50%;
                             object-fit: cover;
-                        }                        
+                        }
                     }
 
                     .profilepostlike {
@@ -151,6 +205,10 @@
 
         .right {
             height: max-content;
+
+            @include laptop {
+                display: none;
+            }
 
             .followers {
                 display: flex;

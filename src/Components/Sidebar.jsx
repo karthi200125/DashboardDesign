@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaRegCalendarAlt, FaUsers } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
 import { GiElectric } from "react-icons/gi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -7,10 +7,10 @@ import { LuMessagesSquare } from "react-icons/lu";
 import { SiDatabricks } from "react-icons/si";
 import { TbLogout } from "react-icons/tb";
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 
-
-const SideBar = ({ onSideOpen }) => {
+const s = ({ onSideOpen }) => {
 
   const routes = [
     { href: "/", name: "Home", icon: <GiElectric size={25} className='bg-transparent' /> },
@@ -31,13 +31,18 @@ const SideBar = ({ onSideOpen }) => {
   }
 
   return (
-    <div className='w-full h-full bg-[#363164] rounded-[30px] flex flex-col justify-between items-center pb-5 pt-5 '>
-      <div className="w-[50px] h-[50px] rounded-full bg-[#0f59fc] ">
-
+    <div className='sidebar hidden w-full h-full bg-[#363164] rounded-[30px] md:flex flex-col justify-between items-center pb-5 pt-5 '>
+      <div className='flex items-center flex-row gap-2 w-full justify-center'>
+        <div className="w-[50px] h-[50px] rounded-full bg-[#0f59fc] flex items-center justify-center p-1 gap-2">
+          <img src={logo} alt="" className='w-full h-full object-contain filter invert' />
+        </div>
+        {sideOpen &&
+          <h1 className='font-bold text-xl'>InfoNest</h1>
+        }
       </div>
       <div className="flex flex-col gap-3 bg-[#363164] w-full pl-5 pt-4 pb-4">
         {routes.map((route) => (
-          <Link to={route.href} className={`${pathname === route.href && 'routeactive'} route relative text-white flex flex-row gap-2`} >
+          <Link to={route.href} key={route.href} className={`${pathname === route.href && 'routeactive'} route relative text-white flex flex-row gap-2`} >
             <div className={`flex flex-row items-center justify-center gap-2 ${pathname === route.href && "bg-[#6e53de] p-[9px]  rounded-full w-full"} ${sideOpen && "bg-[#363164]"}`}>
               <div className={`${pathname === route.href ? "bg-transparent" : "bg-[#363164]"}`}>{route.icon}</div>
               {sideOpen &&
@@ -58,4 +63,4 @@ const SideBar = ({ onSideOpen }) => {
   )
 }
 
-export default SideBar
+export default s

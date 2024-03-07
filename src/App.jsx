@@ -1,15 +1,16 @@
 import React, { Suspense, useState } from 'react';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import './App.scss';
 import Login from './Components/Login';
-import NavBar from './Components/NavBar';
 import PageLoading from './Components/PageLoading';
-import SideBar from './Components/Sidebar';
+import SideBar from './Components/SideBar/SideBar';
 import Activity from './Pages/Activity/Activity';
 import Home from './Pages/Home';
 import Posts from './Pages/Posts/Posts';
 import Profile from './Pages/Profile/Profile';
 import Update from './Pages/Update';
 import UserDetails from './Pages/Users/UserDetails';
+import Navbar from './Components/Navbar/Navbar';
 
 const App = () => {
 
@@ -18,12 +19,12 @@ const App = () => {
     const [sideOpen, setSideOpen] = useState(false)
 
     return (
-      <div className='container mx-auto w-full overflow-hidden h-screen flex flex-row gap-10 py-5'>
-        <div className={`${sideOpen ? "w-[20%]" : 'w-[8%]'} h-full`}>
+      <div className='app '>
+        <div className={`sbcon ${sideOpen ? "sbnormal" : 'sbopen'}`}>
           <SideBar onSideOpen={(sideOpen) => setSideOpen(sideOpen)} />
         </div>
-        <div className='w-full h-full flex flex-col gap-5'>
-          <NavBar />
+        <div className='rightbar '>
+          <Navbar />
           <Outlet />
         </div>
       </div>

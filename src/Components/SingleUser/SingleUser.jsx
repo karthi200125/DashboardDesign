@@ -17,7 +17,7 @@ const SingleUser = ({ user, onclose }) => {
             <p>{user.country}</p>
             <div className='f'>
                 <button>Follow</button>
-                <p>Followes:<span>{user.Followers.length}</span></p>
+                <p>Followes:<span>{10}</span></p>
             </div>
         </div>
     )

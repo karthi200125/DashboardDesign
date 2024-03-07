@@ -1,0 +1,142 @@
+@import '../../App.scss';
+
+.sidebar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #363164;
+    border-radius: 30px;
+
+    .stop {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+
+        @include mobile {
+            display: none;
+        }
+
+        .logocon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0f59fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 5px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: invert(100%);
+            }
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;            
+        }
+    }
+
+    .smid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #363164;
+        width: 100%;
+        padding-left: 20px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+
+        .route {
+            padding: 15px 20px;
+            background-color: #363164;
+            position: relative;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            .roundcon {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .roundconactive {
+                background-color: #6e53de;
+                padding: 9px;
+                border-radius: 30px;
+                width: 100%;
+            }
+        }
+
+        .routeactive {
+            background-color: #16122b;
+            padding: 10px 10px;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            overflow: visible;
+        }
+
+        .routeactive::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            right: 0;
+            top: -20px !important;
+            border-bottom-right-radius: 30px;
+            box-shadow: 5px 5px 0 5px #16122b;
+        }
+
+        .routeactive::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            right: 0;
+            bottom: -20px;
+            border-top-right-radius: 25px;
+            box-shadow: 5px -5px 0 5px #16122b;
+        }
+
+    }
+
+    .sbtm {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #ff1b6d;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        @include mobile {
+            display: none;
+        }
+
+        .sbtmarrow {
+            color: white;
+            background-color: #ff1b6d;
+            font-weight: 700;
+        }
+    }
+
+}
