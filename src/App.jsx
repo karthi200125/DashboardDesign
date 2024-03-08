@@ -5,7 +5,7 @@ import Login from './Components/Login';
 import PageLoading from './Components/PageLoading';
 import SideBar from './Components/SideBar/SideBar';
 import Activity from './Pages/Activity/Activity';
-import Home from './Pages/Home';
+import Home from './Pages/Home/Home';
 import Posts from './Pages/Posts/Posts';
 import Profile from './Pages/Profile/Profile';
 import Update from './Pages/Update';
