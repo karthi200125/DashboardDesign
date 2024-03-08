@@ -20,7 +20,7 @@ const SideBar = ({ onSideOpen }) => {
         { href: "/posts", name: "Posts", icon: <SiDatabricks size={25} className='bg-transparent' /> },
         { href: "/activity", name: "Activity", icon: <LuMessagesSquare size={25} className='bg-transparent' /> },
         { href: "/profile", name: "Profile", icon: <FaRegUser size={25} className='bg-transparent' /> },
-        { href: "/logout", name: "Logout", icon: <TbLogout size={25} className='bg-transparent' /> },
+        { href: "", name: "Logout", icon: <TbLogout size={25} className='bg-transparent' /> },
     ]
 
     const [sideOpen, setSideOpen] = useState(false)

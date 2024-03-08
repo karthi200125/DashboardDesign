@@ -11,6 +11,7 @@ import Profile from './Pages/Profile/Profile';
 import Update from './Pages/Update';
 import UserDetails from './Pages/Users/UserDetails';
 import Navbar from './Components/Navbar/Navbar';
+import MobNav from './Components/MobNav/MobNav';
 
 const App = () => {
 
@@ -23,9 +24,12 @@ const App = () => {
         <div className={`sbcon ${sideOpen ? "sbnormal" : 'sbopen'}`}>
           <SideBar onSideOpen={(sideOpen) => setSideOpen(sideOpen)} />
         </div>
-        <div className='rightbar '>
+        <div className='rightbar'>
           <Navbar />
           <Outlet />
+          <div className="mn">
+            <MobNav />
+          </div>
         </div>
       </div>
     );

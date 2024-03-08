@@ -1,4 +1,4 @@
-import Chart from 'chart.js/auto'; // Importing Chart.js auto version
+import Chart from 'chart.js/auto';
 import React, { useEffect, useRef } from 'react';
 
 const Utils = {
@@ -19,16 +19,16 @@ const MainChart = () => {
     labels: labels,
     datasets: [
       {
-        label: 'From Studenst',                
-        data: [20, 30, 25, 40, 35, 45, 50], 
-        borderColor: '#3268dc', 
-        backgroundColor: 'rgba(50, 104, 220, 0.5)', 
+        label: 'From Studenst',
+        data: [20, 30, 25, 40, 35, 45, 50],
+        borderColor: '#3268dc',
+        backgroundColor: 'rgba(50, 104, 220, 0.5)',
         tension: 0.4,
       },
       {
-        label: 'Dataset 2',
-        data: [10, 20, 15, 25, 20, 30, 35], 
-        borderColor: 'rgb(54, 162, 235)', 
+        label: 'From teachers',
+        data: [10, 20, 15, 25, 20, 30, 35],
+        borderColor: 'rgb(54, 162, 235)',
         backgroundColor: 'rgba(54, 162, 235, 0.5)',
         tension: 0.2,
       }
@@ -39,7 +39,7 @@ const MainChart = () => {
     type: 'line',
     data: data,
     options: {
-        
+
       animations: {
         radius: {
           duration: 400,
@@ -75,7 +75,7 @@ const MainChart = () => {
   }, []);
 
   return (
-    <div className='w-full '>      
+    <div className='w-full '>
       <canvas ref={chartRef} />
     </div>
   );

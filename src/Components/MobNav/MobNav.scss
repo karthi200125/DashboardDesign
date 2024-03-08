@@ -1,0 +1,34 @@
+@import '../../App.scss';
+
+@media screen and (max-width: 480px),
+screen and (min-width: 481px) and (max-width: 768px) {
+    .mobnav {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+
+        .mobnavicon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                position: absolute;
+                font-size: 10px;
+                bottom: -15px;
+            }
+        }
+    }
+}

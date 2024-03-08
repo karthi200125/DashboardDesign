@@ -24,18 +24,30 @@
     transition: 0.3s ease-in-out;
 }
 
+.mn {
+    display: none;
+}
+
 @media screen and (max-width: 480px) {
     .sbcon {
         display: none;
     }
+
+    .mn {
+        display: flex !important;
+    }
+
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .sbcon {
         display: none;
     }
-}
 
+    .mn {
+        display: flex !important;
+    }
+}
 
 .sbopen {
     width: 8%;
